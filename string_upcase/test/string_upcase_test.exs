@@ -8,7 +8,7 @@ defmodule StringUpcaseTest do
     assert_receive {:ok, "FOO BAR"}
   end
 
-  test "it responds an error when it's sent an integer" do
+  test "it responds an error when it sent an integer" do
     pid = spawn(StringUpcase, :start, [])
     send(pid, {123, self()})
     assert_receive {:error, _}
